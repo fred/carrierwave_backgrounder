@@ -11,7 +11,7 @@ module CarrierWave
         new(*args).perform
       end
 
-      def perform
+      def perform(klass, id, column)
         resource = klass.is_a?(String) ? klass.constantize : klass
         record = resource.find id
 
